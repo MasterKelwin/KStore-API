@@ -5,7 +5,9 @@ import { signUpUserDTO } from "./dto/signup.dto";
 @Controller('/users')
 export class UserController {
 
-    constructor(private userRepository: UserRepository) {  }
+    constructor(
+        private userRepository: UserRepository
+        ) {  }
 
     @Post()
     async signUp(@Body() userData: signUpUserDTO) {
