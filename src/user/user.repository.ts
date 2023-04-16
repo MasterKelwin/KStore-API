@@ -14,6 +14,6 @@ export class UserRepository {
     }
 
     async isEmailUnique(email: string) {
-        return this.users.some(user => user.email === email)
+        return this.users.some(user => user.email === email);
     }
 }

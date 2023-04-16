@@ -1,5 +1,6 @@
 import { IsEmail, IsNotEmpty, IsString, MaxLength, MinLength } from "class-validator";
 import { isEmailUnique } from "../validators/unique-email.validator";
+import { v4 as uuidv4 } from 'uuid';
 
 export class signUpUserDTO {
 
@@ -14,4 +15,6 @@ export class signUpUserDTO {
 
     @MinLength(8, { message: "Password has to be at least 8 characters." })
     password: string;
+
+    id: string;
 }
