@@ -1,4 +1,5 @@
 import { IsEmail, IsNotEmpty, IsString, MaxLength, MinLength } from "class-validator";
+import { isEmailUnique } from "../validators/unique-email.validator";
 
 export class signUpUserDTO {
 
@@ -8,6 +9,7 @@ export class signUpUserDTO {
     name: string;
 
     @IsEmail(undefined, { message: 'Invalid e-mail.'})
+    @isEmailUnique({ message: 'Email is already taken.' })
     email: string;
 
     @MinLength(8, { message: "Password has to be at least 8 characters." })

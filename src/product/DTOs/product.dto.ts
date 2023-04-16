@@ -1,6 +1,6 @@
 import { IsArray, IsDate, IsNotEmpty, IsNumber, IsString, MaxLength, ValidateNested, isArray } from "class-validator";
-import { ProductDetailsDTO } from "./product.details.dto";
-import { ProductImageDTO } from "./product.image.dto";
+import { ProductDetailsDTO } from "./product-details.dto";
+import { ProductImageDTO } from "./product-image.dto";
 import { Type } from "class-transformer";
 import { isDate } from "util/types";
 
@@ -10,11 +10,11 @@ export class ProductDTO {
     @MaxLength(100, { message: 'The name has to be shorter or equal to 100 characters.' })
     name: string;
 
-    @IsNumber() // TESTAR NO POSTMAN
+    @IsNumber()
     @IsNotEmpty({ message: 'The value field cannot be empty.' })
     value: number;
 
-    @IsNumber() // TESTAR NO POSTMAN
+    @IsNumber()
     @IsNotEmpty({ message: 'The stock field cannot be empty.' })
     stock: number;
     
